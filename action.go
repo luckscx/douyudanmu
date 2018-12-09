@@ -12,7 +12,7 @@ import (
 var roomid = 0
 
 func init() {
-	targetrid := flag.Int("room", 1173828, "roomid")
+	targetrid := flag.Int("room", 92000, "roomid")
 	flag.Parse()
 	if targetrid != nil {
 		roomid = *targetrid
@@ -24,6 +24,8 @@ func doLogin() {
 
 	loginMsg["type"] = "loginreq"
 	loginMsg["roomid"] = roomid
+
+	log.Infof("join room %d", roomid)
 
 	body := encode(loginMsg)
 
@@ -40,6 +42,8 @@ func doJoinGroup() {
 	body := encode(loginMsg)
 
 	send(body)
+
+	log.Infof("Join Room Group %d", roomid)
 
 	ticker := time.NewTicker(time.Second * 45)
 	go func() {
@@ -73,7 +77,7 @@ func show(ch chan danmu, vch chan string) {
 				if len(vch) < 2 {
 					vch <- showline
 				} else {
-					log.Infof("skip voice,delay quene %d", len(vch))
+					//log.Infof("skip voice,delay quene %d", len(vch))
 				}
 			} else {
 				log.Infof("%s发了一些表情 %s", dm.User, dm.Line)
