@@ -1,12 +1,10 @@
 package main
 
 import (
-	"github.com/onrik/logrus/filename"
 	log "github.com/sirupsen/logrus"
 )
 
 func init() {
-	log.AddHook(filename.NewHook())
 	log.SetFormatter(&log.TextFormatter{
 		ForceColors: true,
 	})
