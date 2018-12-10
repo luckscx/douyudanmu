@@ -5,6 +5,7 @@
 
 ## 依赖包安装
 go get github.com/sirupsen/logrus 日志 
+
 go get github.com/faiface/beep    播放声音库 还有点bug
 
 
