@@ -10,7 +10,7 @@ go get github.com/faiface/beep    播放声音库 还有点bug
 
 
 ## 阿里云申请语音转换接口的权限
-在config.js 中配置 appid和token
+在config.go 中配置 appid和token
 
 ## 编译运行
 go build
